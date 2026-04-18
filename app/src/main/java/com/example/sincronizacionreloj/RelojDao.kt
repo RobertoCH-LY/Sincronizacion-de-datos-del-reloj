@@ -14,15 +14,15 @@ interface RelojDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertarAcumulado(acumulado: AcumuladoReloj)
 
-    @Query("SELECT * FROM mediciones_reloj WHERE timestamp >= :desde AND timestamp <= :hasta AND tipoMedicion = :tipo")
-    suspend fun getMedicionesPorFechaTipo(desde: Long, hasta: Long, tipo: String): List<MedicionReloj>
+    @Query("SELECT COALESCE(SUM(valor), 0.0) FROM mediciones_reloj WHERE tipoMedicion = 'pasos' AND timestamp >= :desde")
+    suspend fun getPasosTotales(desde: Long): Double
 
-    @Query("SELECT * FROM acumulados_reloj WHERE fecha = :fecha")
-    suspend fun getAcumuladoPorFecha(fecha: String): AcumuladoReloj?
-
-    @Query("SELECT AVG(valor) FROM mediciones_reloj WHERE tipoMedicion = 'frecuencia_cardiaca' AND timestamp >= :desde")
+    @Query("SELECT COALESCE(AVG(valor), 0.0) FROM mediciones_reloj WHERE tipoMedicion = 'frecuencia_cardiaca' AND timestamp >= :desde")
     suspend fun getRitmoPromedio(desde: Long): Double
 
-    @Query("SELECT SUM(valor) FROM mediciones_reloj WHERE tipoMedicion = 'pasos' AND timestamp >= :desde")
-    suspend fun getPasosTotales(desde: Long): Double
+    @Query("SELECT COALESCE(SUM(valor), 0.0) FROM mediciones_reloj WHERE tipoMedicion = 'sueno' AND timestamp >= :desde")
+    suspend fun getHorasSueno(desde: Long): Double
+
+    @Query("SELECT * FROM acumulados_reloj ORDER BY fecha DESC")
+    suspend fun getAcumulados(): List<AcumuladoReloj>
 }

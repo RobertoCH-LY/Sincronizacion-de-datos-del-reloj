@@ -93,6 +93,7 @@ class RepositorioReloj(private val context: Context) {
     private suspend fun calcularYGuardarAcumulado(fecha: String, desde: Instant) {
         val pasos = dao.getPasosTotales(desde.toEpochMilli())
         val ritmo = dao.getRitmoPromedio(desde.toEpochMilli())
+        val horasSueno = dao.getHorasSueno(desde.toEpochMilli())
 
         dao.insertarAcumulado(
             AcumuladoReloj(
@@ -100,7 +101,8 @@ class RepositorioReloj(private val context: Context) {
                 pasosTotales = pasos.toInt(),
                 ritmoPromedio = ritmo,
                 distanciaTotal = 0.0,
-                caloriasTotal = 0.0
+                caloriasTotal = 0.0,
+                horasSueno = horasSueno
             )
         )
     }

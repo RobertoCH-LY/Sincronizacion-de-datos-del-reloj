@@ -10,5 +10,6 @@ data class AcumuladoReloj(
     val pasosTotales: Int,
     val ritmoPromedio: Double,
     val distanciaTotal: Double,
-    val caloriasTotal: Double
+    val caloriasTotal: Double,
+    val horasSueno: Double
 )
