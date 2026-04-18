@@ -48,5 +48,5 @@ Módulo Android en Kotlin que sincroniza datos de actividad física desde Health
 
 ## Licencia
 
-Este proyecto utiliza la licencia MIT. El código es libre y se puede usar, modificar o distribuir sin restricciones, siempre que se mantenga el aviso de copyright original.
+Este proyecto utiliza la licencia MIT. El código es libre y se puede usar, modificar o distribuir sin restricciones.
 
