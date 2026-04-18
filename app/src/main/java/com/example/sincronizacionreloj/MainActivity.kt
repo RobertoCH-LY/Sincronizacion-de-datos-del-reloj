@@ -57,7 +57,8 @@ class MainActivity : ComponentActivity() {
             pasosTotales = 8543,
             ritmoPromedio = 72.0,
             distanciaTotal = 5.2,
-            caloriasTotal = 320.0
+            caloriasTotal = 320.0,
+            horasSueno = 7.5
         ))
     }
 }
