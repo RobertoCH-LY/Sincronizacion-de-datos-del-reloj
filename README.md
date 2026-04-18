@@ -9,7 +9,7 @@ Módulo Android en Kotlin que sincroniza datos de actividad física desde Health
 | Fichero | Descripción |
 |---|---|
 | `MedicionReloj.kt` | Entidad que representa una medición individual con timestamp, valor y unidad |
-| `AcumuladoReloj.kt` | Entidad que representa el resumen diario: pasos, ritmo, distancia y calorías |
+| `AcumuladoReloj.kt` | Entidad que representa el resumen diario: pasos, ritmo, distancia, calorías y horas de sueño |
 | `AppDatabase.kt` | Instancia singleton de la base de datos Room (`saludconecta.db`) |
 | `RelojDao.kt` | Interfaz con las operaciones de base de datos: insertar y consultar mediciones |
 | `RelojRepository.kt` | Lee de Health Connect y guarda en Room. Incluye `insertarDatosDePrueba()` |
@@ -25,7 +25,7 @@ Módulo Android en Kotlin que sincroniza datos de actividad física desde Health
 - **Kotlin Coroutines** — operaciones asíncronas
 
 ## Permisos necesarios
-`READ_STEPS` · `READ_HEART_RATE` · `READ_DISTANCE` · `READ_TOTAL_CALORIES_BURNED`
+`READ_STEPS` · `READ_HEART_RATE` · `READ_DISTANCE` · `READ_TOTAL_CALORIES_BURNED` · `READ_SLEEP`
 
 ---
 
@@ -49,4 +49,3 @@ Módulo Android en Kotlin que sincroniza datos de actividad física desde Health
 ## Licencia
 
 Este proyecto utiliza la licencia MIT. El código es libre y se puede usar, modificar o distribuir sin restricciones.
-
