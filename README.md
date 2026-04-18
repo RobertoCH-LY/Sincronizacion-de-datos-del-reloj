@@ -48,10 +48,5 @@ Módulo Android en Kotlin que sincroniza datos de actividad física desde Health
 
 ## Licencia
 
-MIT License
+Este proyecto utiliza la licencia MIT. El codigo es libre y se puede usar, modificar o distribuir sin restricciones. Hay que tener en cuenta que la consulta de datos del clima utiliza el plan gratuito de Open-Meteo, por lo que un futuro uso comercial de la aplicacion obligaria a revisar las condiciones de dicha API externa.
 
-Copyright (c) 2026 Roberto
-
-Se concede permiso, de forma gratuita, a cualquier persona que obtenga una copia de este software y archivos de documentación asociados, para usar, copiar, modificar, fusionar, publicar, distribuir, sublicenciar y/o vender copias del software, sin restricción alguna, siempre que se incluya el aviso de copyright anterior en todas las copias o partes sustanciales del software.
-
-EL SOFTWARE SE PROPORCIONA "TAL CUAL", SIN GARANTÍA DE NINGÚN TIPO.
