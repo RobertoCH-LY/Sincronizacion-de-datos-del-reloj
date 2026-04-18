@@ -1,0 +1,46 @@
+# SaludConecta — Sincronización de datos del reloj
+
+Módulo Android en Kotlin que sincroniza datos de actividad física desde Health Connect y los guarda localmente con Room.
+
+---
+
+## Ficheros
+
+| Fichero | Descripción |
+|---|---|
+| `MedicionReloj.kt` | Entidad que representa una medición individual con timestamp, valor y unidad |
+| `AcumuladoReloj.kt` | Entidad que representa el resumen diario: pasos, ritmo, distancia y calorías |
+| `AppDatabase.kt` | Instancia singleton de la base de datos Room (`saludconecta.db`) |
+| `RelojDao.kt` | Interfaz con las operaciones de base de datos: insertar y consultar mediciones |
+| `RelojRepository.kt` | Lee de Health Connect y guarda en Room. Incluye `insertarDatosDePrueba()` |
+| `SincronizacionWorker.kt` | Worker que se ejecuta cada 30 minutos y llama al repositorio |
+| `MainActivity.kt` | Registra el Worker al abrir la app. Incluye botón de prueba |
+
+---
+
+## Sin reloj
+
+1. Pulsar el botón **"Insertar datos de prueba"** en la app
+2. Ir a Android Studio → **App Inspection** → **Database Inspector**
+3. Abrir `saludconecta.db`
+4. Verificar que las tablas `mediciones_reloj` y `acumulados_reloj` tienen datos
+
+## Con reloj
+
+1. Instalar la app **Health Connect** en el dispositivo
+2. Conceder los permisos de pasos, frecuencia cardíaca, distancia y calorías
+3. Asegurarse de que el reloj está sincronizado con Health Connect
+4. Al abrir la app, el Worker se registra y sincroniza automáticamente cada 30 minutos
+5. Verificar igual que en el caso sin reloj, activando **Live updates** en el Database Inspector
+
+---
+
+## Licencia
+
+MIT License
+
+Copyright (c) 2026 Roberto
+
+Se concede permiso, de forma gratuita, a cualquier persona que obtenga una copia de este software y archivos de documentación asociados, para usar, copiar, modificar, fusionar, publicar, distribuir, sublicenciar y/o vender copias del software, sin restricción alguna, siempre que se incluya el aviso de copyright anterior en todas las copias o partes sustanciales del software.
+
+EL SOFTWARE SE PROPORCIONA "TAL CUAL", SIN GARANTÍA DE NINGÚN TIPO.
