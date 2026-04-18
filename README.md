@@ -1,4 +1,4 @@
-#Sincronización de datos del reloj
+# Sincronización de datos del reloj
 
 Módulo Android en Kotlin que sincroniza datos de actividad física desde Health Connect y los guarda localmente con Room.
 
