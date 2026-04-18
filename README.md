@@ -16,8 +16,6 @@ Módulo Android en Kotlin que sincroniza datos de actividad física desde Health
 | `SincronizacionWorker.kt` | Worker que se ejecuta cada 30 minutos y llama al repositorio |
 | `MainActivity.kt` | Registra el Worker al abrir la app. Incluye botón de prueba |
 
----
-
 ## Tecnologías
 
 - **Room** `2.6.1` — persistencia local SQLite
