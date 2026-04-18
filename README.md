@@ -18,6 +18,19 @@ Módulo Android en Kotlin que sincroniza datos de actividad física desde Health
 
 ---
 
+## Tecnologías
+
+- **Room** `2.6.1` — persistencia local SQLite
+- **WorkManager** — sincronización en segundo plano
+- **Health Connect** — lectura de datos del reloj
+- **KSP** `2.0.21` — procesador de anotaciones para Room
+- **Kotlin Coroutines** — operaciones asíncronas
+
+## Permisos necesarios
+`READ_STEPS` · `READ_HEART_RATE` · `READ_DISTANCE` · `READ_TOTAL_CALORIES_BURNED`
+
+---
+
 ## Sin reloj
 
 1. Pulsar el botón **"Insertar datos de prueba"** en la app
